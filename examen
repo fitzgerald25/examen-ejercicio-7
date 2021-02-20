@@ -1,0 +1,100 @@
+def Main():
+  Billetes1000=int(18 * 1000)
+  Billetes500=int(19 * 500)
+  Billetes200=int(23 * 200)
+  Billetes100=int(50 * 50)
+  Limite=int(0)
+  Suma1000=int(0)
+  Suma500=int(0)
+  Suma200=int(0)
+  Suma100=int(0)
+  SumaTotal=int(0)
+  print("Digite el numero del banco:")
+  print("(1) FDP INVERSMENTS")
+  print("(2) Otro")
+  Banco = int(input())
+  print("Monto a retirar?")
+  Monto = int(input())
+  if(Banco==1):
+    Limite = 20000
+    if(Monto > Limite):
+      print("Este cantidad pasa limite de su transaccion")
+    else:
+      while(Suma1000 < Monto):
+        if(Suma1000 + 1000 > Monto):
+          pass
+        else:
+          Suma1000 = Suma1000 + 1000
+          Billetes1000 = Billetes1000 - Suma1000
+      SumaTotal = Suma1000
+      while(SumaTotal < Monto):
+        if(SumaTotal + 500 > Monto):
+          pass
+        else:
+          Suma500 = Suma500 + 500
+          Billetes500 = Billetes500 - Suma500
+          SumaTotal = SumaTotal + 500
+      while(SumaTotal < Monto):
+        if(SumaTotal + 200 > Monto):
+          pass
+        else:
+          Suma200 = Suma200 + 200
+          Billetes200 = Billetes200 - Suma200
+          SumaTotal = SumaTotal + 200
+      while(SumaTotal < Monto):
+        if(SumaTotal + 100 > Monto):
+          pass
+        else:
+          Suma100 = Suma100 + 100
+          Billetes100 = Billetes100 - Suma100
+          SumaTotal = SumaTotal + 100
+      if(SumaTotal != Monto):
+        print("No podemos dispensar esa cantidad");
+      else:
+        print("Se le han sumado " +Suma1000 +" En 1000 pesos")
+        print("Se le han sumado en " +Suma500 +" En 500 pesos")
+        print("Se le han sumado en " +Suma200 +" En 200 pesos")
+        print("Se le han sumado en " +Suma100 +" En 100 pesos")
+        print(SumaTotal)
+  elif (Banco == 2):
+    Limite = 10000
+    if(Monto > Limite):
+      print("Limite de su transaccion")
+      pass
+    else:
+      while(Suma1000 < Monto):
+        if(Suma1000 + 1000 > Monto):
+          pass
+        else:
+          Suma1000 = Suma1000 + 1000
+      SumaTotal = Suma1000
+      while(SumaTotal < Monto):
+        if(SumaTotal + 500 > Monto):
+          pass
+        else:
+          Suma500 = Suma500 + 500
+          SumaTotal = SumaTotal + 500
+      while(SumaTotal < Monto):
+        if(SumaTotal + 200 > Monto):
+          pass
+        else:
+          Suma200 = Suma200 + 200
+          SumaTotal = SumaTotal + 200
+      while(SumaTotal < Monto):
+        if(SumaTotal + 100 > Monto):
+          pass
+        else:
+          Suma100 = Suma100 + 100
+          SumaTotal = SumaTotal + 100
+    if(SumaTotal != Monto):
+      print("No podemos dispensar esa cantidad")
+    else:
+      print("Se le han sumado " +Suma1000 +" En 1000 pesos")
+      print("Se le han sumado en " +Suma500 +" En 500 pesos")
+      print("Se le han sumado en " +Suma200 +" En 200 pesos")
+      print("Se le han sumado en " +Suma100 +" En 100 pesos")
+      print(SumaTotal)
+  else:
+    print("Ingrese El Banco Correctamente")
+if _name_ == "_main_":
+  Main()
